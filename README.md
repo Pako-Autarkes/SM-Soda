@@ -30,13 +30,13 @@ A static file server. Nothing more. Nothing less.
 
 ```bash
 # Serve current dir on port 8080
-./microserve
+./sm-soda
 
 # Custom port
-./microserve 9000
+./sm-soda 9000
 
 # Custom port + directory
-./microserve 9000 /var/www/html
+./sm-soda 9000 /var/www/html
 ```
 
 Handles: **GET**, MIME types, directory listings, **404** on missing files.
@@ -69,13 +69,13 @@ The dual implementation (FPC + C) isn't redundancy — it's the point. Same spec
 **FPC:**
 ```bash
 cd fpc
-fpc microserve.pas -O2 -o microserve
+fpc sm-soda.pas -O2 -o sm-soda
 ```
 
 **C:**
 ```bash
 cd c
-gcc -O2 -std=c99 microserve.c -o microserve
+gcc -O2 -std=c99 sm-soda.c -o sm-soda
 ```
 
 ---
@@ -126,7 +126,7 @@ gcc -O2 -std=c99 microserve.c -o microserve
 - Rate limiting (token bucket, per-IP)
 - Logging to stdout / file / syslog (Common Log Format)
 - Daemon mode (detach from terminal, pidfile)
-- Config file (.microserve.conf, JSON or TOML or nothing)
+- Config file (.sm-soda.conf, JSON or TOML or nothing)
 - Index file variants (index.htm, default.html)
 - Custom error pages (404.html in root)
 - CORS headers (for local dev with fetch)
